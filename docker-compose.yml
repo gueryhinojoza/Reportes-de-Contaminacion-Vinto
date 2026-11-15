@@ -1,0 +1,20 @@
+services:
+  web:
+    build: .
+    container_name: vinto_incidentes
+    ports:
+      - "8080:8080"
+    environment:
+      # Ruta del archivo SQLite y carpeta de imágenes subidas.
+      VINTO_DB_URL: sqlite:////app/data/vinto.db
+      VINTO_UPLOADS: /app/uploads
+      # Cambie este valor en producción.
+      STORAGE_SECRET: ${STORAGE_SECRET:-cambiar}
+    volumes:
+      - data:/app/data
+      - uploads:/app/uploads
+    restart: unless-stopped
+
+volumes:
+  data:
+  uploads:

@@ -1,0 +1,26 @@
+# Entorno local
+.venv/
+venv/
+**/__pycache__/
+**/*.py[cod]
+.pytest_cache/
+.nicegui/
+
+# Datos que viven en volúmenes de Docker (no se copian a la imagen)
+data/
+uploads/
+**/*.db
+**/*.sqlite3
+
+# Control de versiones y herramientas
+.git/
+.gitignore
+.idea/
+.vscode/
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Pruebas y documentación (no hacen falta en la imagen)
+tests/
+README.md
